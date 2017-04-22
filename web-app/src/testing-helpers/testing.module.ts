@@ -5,7 +5,8 @@ import { NgForm, FormsModule } from '@angular/forms';
 
 import { AuthService } from './../app/auth/';
 import { ErrorsService } from './../app/shared/errors.service';
-import { AuthSericeMock, ErrorServiceMock } from './index';
+import { ProjectsService } from './../app/projects';
+import { AuthSericeMock, ErrorServiceMock, ProjectServiceMock } from './index';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AuthSericeMock, ErrorServiceMock } from './index';
         NgForm,
         { provide: AuthService, useClass: AuthSericeMock },
         { provide: ErrorsService, useClass: ErrorServiceMock },
+        { provide: ProjectsService, useClass: ProjectServiceMock }
     ],
     exports: [
         CommonModule,
